@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npm run lint-ts && npm run build-ts && mocha out/test",
+    "test": "npm run lint-ts && npm run clean && npm run build-ts && mocha --recursive out/test",
     "build-ts": "tsc",
-    "lint-ts": "tslint -c tslint.json --project tsconfig.json -r node_modules/tslint-microsoft-contrib"
+    "lint-ts": "tslint -c tslint.json --project tsconfig.json -r node_modules/tslint-microsoft-contrib",
+    "clean": "rm -rf out"
   },
   "author": "",
   "license": "ISC",
